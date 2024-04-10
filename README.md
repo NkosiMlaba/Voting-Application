@@ -1,6 +1,7 @@
 
 # Account Requirements:
 - A Google email
+- A client_secret file from google cloud console <a href="#googlecloud">(instructions)</a>
 
 ---
 
@@ -41,3 +42,45 @@ A polling app that can be used to host polls / elections to gather data. Creatin
 # Key Features:
 - Using Google Oauth to login and authenticate users
 - Using Fernet to mask voter emails
+
+---
+
+# Obtaining Google (client_secret)
+<p id=googlecloud>
+Create a Google Cloud Project:
+
+If you haven't already, navigate to the Google Cloud Console and create a new project. Note down the project ID.
+
+Enable Necessary APIs:
+In the Google Cloud Console, navigate to the "APIs & Services" > "Library" section.
+Search for and enable the necessary APIs required by the project. In this case, enable the "Google Identity" API.
+
+Set Up OAuth Consent Screen:
+Navigate to the "APIs & Services" > "OAuth consent screen" section.
+Configure the OAuth consent screen with required information such as the application name, user support email, and scopes. Make sure to include the following scopes:
+https://www.googleapis.com/auth/userinfo.email
+Save your changes.
+
+Create OAuth 2.0 Client ID:
+Navigate to the "APIs & Services" > "Credentials" section.
+Click on the "Create credentials" button and select "OAuth client ID" from the dropdown menu.
+Choose the Desktop application.
+Click "Create" to generate your OAuth 2.0 Client ID and client secret.
+
+Download Client Secret File:
+After creating the OAuth 2.0 Client ID, you'll be provided with a client ID and client secret.
+Click on the download icon next to your client ID to download the client_secret.json file.
+Keep this file secure and do not share it publicly.
+
+Rename Client Secret File:
+Rename the file to "client_secret.json"
+
+Place Client Secret File in Project Directory:
+Once downloaded, move the "client_secret.json" file to the appropriate directory which is "VotingApp/authentication/"
+
+Configure the Project to Use Client Secret:
+The project is configured to run using the client_secret file in the authentication directory.
+
+Run the Project:
+With the client secret file properly configured, you can now run the project. Follow the project-specific instructions for setting up and running the application.
+</p>
