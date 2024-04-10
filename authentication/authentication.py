@@ -25,7 +25,6 @@ def authenticate():
                         CLIENT_SECRET_FILE, SCOPES
                     )
                 creds = flow.run_local_server(port=0)
-                # Save the credentials for the next run
                 with open("authentication/token.json", "w") as token:
                     token.write(creds.to_json())
     except Exception as e:
