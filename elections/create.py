@@ -131,7 +131,7 @@ def get_is_public_election():
 
 def get_voters_number():
     while True:
-        number = input("Enter number of people you want to be able to vote in the Election: ")
+        number = input("Enter number of people you want to be able to vote in the election: ")
         try:
             number = int(number)
             return number
