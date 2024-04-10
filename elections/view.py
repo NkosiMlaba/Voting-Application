@@ -51,9 +51,12 @@ def print_election_title(chosen_election):
 
 def print_votes(chosen_election):
     total_votes = 0
+
+    
     for option, votes in chosen_election["election_data"].items():
-        print(f"{option.capitalize()} has {votes} vote(s).")
+        print(f"{votes} vote(s) for: {option.capitalize()}.")
         total_votes += votes
+    print()
     print(f"Total votes for this election: {total_votes}")
     print()
 
