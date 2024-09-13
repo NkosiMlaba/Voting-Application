@@ -20,6 +20,7 @@
 - Bash terminal
 - Python3
 - Pip
+- .env file <a href="#encryption">(instructions)</a>
 
 
 ## Running instructions:
@@ -50,6 +51,16 @@ A voting app that can be used to host elections to gather data. Creating an elec
  Viewing elections involves showing the user all available elections and prompting the user for the election they want to view. The user then enters the election number for the election they want to view. If there are no elections the user is returned to the previous screen. If the election is public any user can view the details of the election. If the election is private only the owner is allowed to view the details of the election. Details shown about the election include the title, whether the is allowed to vote, whether it is a public election, the election creator, the votes for each candidate, and the total votes in the election.
 
  Participating in an election involves showing the user available elections and then prompting the user for the election they wish to participate in. If there are no elections the user is returned to the previous screen. Based on the chosen election checks are made whether the user is allowed to vote in this election (the election may be private). If the user is not allowed to vote they are returned to the previous screen. If they are allowed to vote then the candidates are printed and the user is prompted for their choice. Once chosen the voting data is written and the scores are updated automatically.
+</p>
+
+
+## Encryption key instructions:
+<p id=encryption>
+
+1. Use this command to generate an encryption key:
+    
+        python3 encrypt/encryption.py
+2. Create a .env file in the root of the directory and add the encryption key
 </p>
 
 
