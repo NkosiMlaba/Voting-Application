@@ -17,8 +17,6 @@ def create_election(title,
     for option in options_and_data.keys():
         vote_data_default[option] = 0
 
-
-
     election_metadata = {"title": title,
                          "election_data": vote_data_default,
                          "self_voting": allow_self_voting,
@@ -27,8 +25,6 @@ def create_election(title,
                          "voters": voters_list
                          }
 
-
-    
     directory_number_available = count_directories() + 1
     election_path = f"{subdirectory_path}/{directory_number_available}.{title}"
     os.makedirs(election_path, exist_ok=True)

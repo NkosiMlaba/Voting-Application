@@ -9,9 +9,10 @@ def read_key_from_env():
     encoded_key = os.getenv("ENCRYPTION_KEY")
     if encoded_key is None:
         raise ValueError("Encryption key not found in the environment variables.")
-    
+
     key = base64.urlsafe_b64decode(encoded_key.encode())
     return key
+
 
 def generate_key():
     return Fernet.generate_key()
