@@ -12,7 +12,15 @@ def create_election(title,
                     is_public_election,
                     email,
                     voters_list):
-    
+    """Creates a new election directory and stores the election information.
+    Args:
+        title (str): The title of the election.
+        options_and_data (dict): A dictionary containing the options and their corresponding data.
+        allow_self_voting (bool): Whether the creator of the election is allowed to vote.
+        is_public_election (bool): Whether the election is open to the public.
+        email (str): The email address of the election creator.
+        voters_list (list): A list of email addresses of eligible voters.
+    """
     vote_data_default = {}
     for option in options_and_data.keys():
         vote_data_default[option] = 0
@@ -25,6 +33,8 @@ def create_election(title,
                          "voters": voters_list
                          }
 
+
+    
     directory_number_available = count_directories() + 1
     election_path = f"{subdirectory_path}/{directory_number_available}.{title}"
     os.makedirs(election_path, exist_ok=True)
@@ -44,6 +54,11 @@ def create_election(title,
 
 
 def count_directories():
+    """Counts the number of directories in the database subdirectory.
+
+    Returns:
+        int: The number of directories.
+    """
     directory = subdirectory_path
     items = os.listdir(directory)
     num_directories = 0
@@ -56,6 +71,11 @@ def count_directories():
 
 
 def get_election_title():
+    """Prompts the user to enter the title of the election.
+
+    Returns:
+        str: The title of the election.
+    """
     
     while True:
         title = input("Enter the name of your poll / election: ")
@@ -64,6 +84,11 @@ def get_election_title():
 
 
 def get_options_number():
+    """Prompts the user to enter the number of options/candidates.
+
+    Returns:
+        int: The number of options/candidates.
+    """
     
     while True:
         number = input("Enter number of candidates /options: ")
@@ -77,6 +102,14 @@ def get_options_number():
 
 
 def get_option(number):
+    """Prompts the user to enter the name of an option.
+
+    Args:
+        number (int): The option number.
+
+    Returns:
+        str: The name of the option.
+    """
     while True:
         option = input(f"Enter the name of the {number} option in the election: ")
         if option != "":
@@ -84,6 +117,14 @@ def get_option(number):
 
 
 def get_data(option):
+    """Prompts the user to enter details for an option.
+
+    Args:
+        option (str): The option name.
+
+    Returns:
+        str: The details for the option.
+    """
     while True:
         data = input(f"Enter the enter all details corresponding to {option} option in the election: ")
         if data != "":
@@ -91,6 +132,14 @@ def get_data(option):
 
 
 def get_options_details(number_of_options):
+    """Gets the details for all options in the election.
+
+    Args:
+        number_of_options (int): The number of options.
+
+    Returns:
+        dict: A dictionary containing the options and their details.
+    """
 
     options_and_data = {}
     for number in range(1, number_of_options+1):
@@ -102,6 +151,11 @@ def get_options_details(number_of_options):
 
 
 def get_is_self_voting():
+    """Asks the user if they are allowed to vote in the election.
+
+    Returns:
+        bool: True if self-voting is allowed, False otherwise.
+    """
     
     while True:
         print("As the maker of this election, are you allowed to participate in it?")
@@ -114,7 +168,11 @@ def get_is_self_voting():
 
 
 def get_is_public_election():
+    """Asks the user if the election is public or private.
 
+    Returns:
+        bool: True if the election is public, False otherwise.
+    """
     while True:
         print("Is this a public election (anyone can participate) or private")
         is_public = input(f"Enter 'Yes' for public election and 'No' for a private: ")
@@ -126,6 +184,11 @@ def get_is_public_election():
 
 
 def get_voters_number():
+    """Prompts the user to enter the number of eligible voters.
+
+    Returns:
+        int: The number of eligible voters.
+    """
     while True:
         number = input("Enter number of people you want to be able to vote in the election: ")
         try:
@@ -136,6 +199,14 @@ def get_voters_number():
 
 
 def get_voter_email(number):
+    """Prompts the user to enter the email address of a voter.
+
+    Args:
+        number (int): The voter number.
+
+    Returns:
+        str: The email address of the voter.
+    """
     while True:
         data = input(f"Enter the email corresponding to {number} voter in the election: ")
         if data != "":
@@ -143,6 +214,14 @@ def get_voter_email(number):
 
 
 def get_allowed_voters(is_public_election):
+    """Gets the list of eligible voters for the election.
+
+    Args:
+        is_public_election (bool): Whether the election is public or private.
+
+    Returns:
+        list: A list of email addresses of eligible voters.
+    """
     if is_public_election:
         return ["everyone"]
     

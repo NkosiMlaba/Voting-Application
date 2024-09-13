@@ -15,6 +15,9 @@ def clear_screen():
 
 
 def start_app():
+    """
+    This function handles the entry of the application. Giving the user the option to login
+    """
     global creds, user_email
     while True:
         print("""Welcome to 
@@ -42,6 +45,10 @@ def start_app():
 
 
 def prompt_for_action():
+    """
+    This function handles the main menu of the voting application. It displays a list of options
+    for the user to choose from and performs the corresponding action based on the user's input.
+    """
     while True:
         print("""Select an option to continue
         [1] View Elections
@@ -76,6 +83,12 @@ def prompt_for_action():
 
 
 def prompt_for_election_data():
+    """
+    Prompts the user to input data for creating a new election.
+    Collects the title, number of options, details of each option,
+    self-voting permission, public election status, and allowed voters.
+    Calls the create_election function from the 'create' module to create the election.
+    """
     global user_email
 
     title = create.get_election_title()
@@ -97,6 +110,9 @@ def prompt_for_election_data():
 
 
 def show_elections_view():
+    """
+    Displays the list of available elections and allows the user to view the details of a chosen election.
+    """
     global user_email
 
     elections = view.get_elections()
@@ -123,6 +139,9 @@ def show_elections_view():
 
 
 def prompt_for_vote():
+    """
+    Prompts the user to vote in a chosen election.
+    """
     global user_email
     elections = view.get_elections()
     if len(elections) == 0:

@@ -10,7 +10,9 @@ SCOPES = ["https://www.googleapis.com/auth/userinfo.email", "openid", ]
 
 
 def authenticate():
-    """Attempts to log in a user using their google account in browser"""
+    """
+    Attempts to log in a user using their google account in browser
+    """
     creds = None
     
     try:
@@ -36,7 +38,9 @@ def authenticate():
 
 
 def get_user_data(creds):
-    "Tries to get the user's email using the generated creds"
+    """
+    Tries to get the user's email using the generated creds
+    """
     try:
         userinfo_url = 'https://openidconnect.googleapis.com/v1/userinfo'
         
