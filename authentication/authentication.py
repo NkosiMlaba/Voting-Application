@@ -16,7 +16,6 @@ def authenticate():
     try:
         if os.path.exists("authentication/token.json"):
             creds = Credentials.from_authorized_user_file("authentication/token.json", SCOPES)
-
         if not creds or not creds.valid:
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
@@ -31,7 +30,6 @@ def authenticate():
         print("Failed to log in")
         print()
         exit(e)
-    
     print("Authentication successful!")
     print()
     return creds
@@ -46,14 +44,11 @@ def get_user_data(creds):
             userinfo_url,
             headers={'Authorization': 'Bearer ' + creds.token}
         )
-        
         if response.status_code == 200:
             user_info = response.json()
             email = user_info.get('email')
-            
             print(f"User logged in: {email}")
             print()
-
             return email
         else:
             print("Error retrieving user info. Status code:", response.status_code)

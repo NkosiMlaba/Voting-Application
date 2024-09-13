@@ -1,7 +1,44 @@
 
-# Summary:
+
+
+
+## Account Requirements:
+- A Google email
+- A client_secret file from google cloud console <a href="#googlecloud">(instructions)</a>
+
+---
+
+## System Requirements:
+- An internet connection
+- A linux based machine
+- Bash terminal
+- Python3
+- Pip
+
+
+## Running instructions:
+- Open terminal in the application's directory
+- Run this command in terminal --> pip install -r dependencies requirements.txt
+    (installs the dependencies)
+- Run this command in terminal --> 
+    
+        python3 project.py
+
+
+## Testing instructions:
+1. Command to run tests:
+    
+        python3 test_project.py
+
+
+# Key Features:
+- Using Google Oauth to login and authenticate users
+- Using Fernet to mask voter emails
+
+
+# Detailed Description:
 <p>
-A voting app that can be used to host elections/votes to gather data. Creating an election involves:
+A voting app that can be used to host elections to gather data. Creating an election involves:
  naming the election, providing the number of candidates, entering information about each candidate, and answering whether the creator of the election is also allowed to vote and whether it is a public election or not. For non-public elections only specified people are allowed to vote.
 
  Viewing elections involves showing the user all available elections and prompting the user for the election they want to view. The user then enters the election number for the election they want to view. If there are no elections the user is returned to the previous screen. If the election is public any user can view the details of the election. If the election is private only the owner is allowed to view the details of the election. Details shown about the election include the title, whether the is allowed to vote, whether it is a public election, the election creator, the votes for each candidate, and the total votes in the election.
@@ -9,43 +46,8 @@ A voting app that can be used to host elections/votes to gather data. Creating a
  Participating in an election involves showing the user available elections and then prompting the user for the election they wish to participate in. If there are no elections the user is returned to the previous screen. Based on the chosen election checks are made whether the user is allowed to vote in this election (the election may be private). If the user is not allowed to vote they are returned to the previous screen. If they are allowed to vote then the candidates are printed and the user is prompted for their choice. Once chosen the voting data is written and the scores are updated automatically.
 </p>
 
----
 
-# Account Requirements:
-- A Google email
-- A client_secret file from google cloud console <a href="#googlecloud">(instructions)</a>
-
----
-
-# System Requirements:
-- An internet connection
-- A linux based machine
-- Bash terminal
-- Python3
-- Pip
-
----
-
-# Running instructions:
-- Open terminal in the application's directory
-- Run this command in terminal --> pip install -r dependencies requirements.txt
-    (installs the dependencies)
-- Run this command in terminal --> python3 project.py
-
----
-
-# Testing instructions:
-- Run this command in terminal --> python3 test_project.py
-
----
-
-# Key Features:
-- Using Google Oauth to login and authenticate users
-- Using Fernet to mask voter emails
-
----
-
-# Obtaining Google (client_secret)
+# Obtaining client_secret:
 <p id=googlecloud>
 
 1. Create a Google Cloud Project:
