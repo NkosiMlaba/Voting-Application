@@ -1,12 +1,18 @@
+# Voting-Application
 
+## Project Status ![Status](https://img.shields.io/badge/status-completed-brightgreen)
 
+1. The core functionality is completed
+
+2. Additional features that I am looking to have implemented:
+    - More robust user interface
+    - Using databases to store the election data
 
 
 ## Account Requirements:
 - A Google email
 - A client_secret file from google cloud console <a href="#googlecloud">(instructions)</a>
 
----
 
 ## System Requirements:
 - An internet connection
@@ -18,7 +24,7 @@
 
 ## Running instructions:
 - Open terminal in the application's directory
-- Run this command in terminal --> pip install -r dependencies requirements.txt
+- Run this command in terminal --> pip install -r dependencies/requirements.txt
     (installs the dependencies)
 - Run this command in terminal --> 
     
@@ -31,12 +37,12 @@
         python3 test_project.py
 
 
-# Key Features:
+## Key Features:
 - Using Google Oauth to login and authenticate users
 - Using Fernet to mask voter emails
 
 
-# Detailed Description:
+## Detailed Description:
 <p>
 A voting app that can be used to host elections to gather data. Creating an election involves:
  naming the election, providing the number of candidates, entering information about each candidate, and answering whether the creator of the election is also allowed to vote and whether it is a public election or not. For non-public elections only specified people are allowed to vote.
@@ -47,7 +53,7 @@ A voting app that can be used to host elections to gather data. Creating an elec
 </p>
 
 
-# Obtaining client_secret:
+## Obtaining client_secret:
 <p id=googlecloud>
 
 1. Create a Google Cloud Project:

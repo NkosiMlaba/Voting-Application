@@ -6,7 +6,7 @@ from unittest.mock import patch
 import project
 
 
-class MyTestCase(unittest.TestCase):
+class TestVotingFunctions(unittest.TestCase):
     if 'unittest.util' in __import__('sys').modules:
     # Show full diff in self.assertEqual.
         __import__('sys').modules['unittest.util']._MAX_LENGTH = 999999999
@@ -25,3 +25,6 @@ class MyTestCase(unittest.TestCase):
         print(output)
 
         self.assertIn("", output)
+
+if __name__ == "__main__":
+    unittest.main()
