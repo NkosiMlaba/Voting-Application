@@ -35,7 +35,10 @@
 ## Testing instructions:
 1. Command to run tests:
     
-        python3 test_project.py
+        python3 tests/test_project.py
+        python3 tests/test_create.py
+        python3 tests/test_participate.py
+        python3 tests/test_view.py
 
 
 ## Key Features:
