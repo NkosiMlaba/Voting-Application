@@ -1,4 +1,5 @@
 import os.path
+import sys
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -28,12 +29,9 @@ def authenticate():
                 creds = flow.run_local_server(port=0)
                 with open("authentication/token.json", "w") as token:
                     token.write(creds.to_json())
-    except Exception as e:
-        print("Failed to log in")
-        print()
-        exit(e)
-    print("Authentication successful!")
-    print()
+    except FileNotFoundError as e:
+        print_file_not_found_error()
+    print("Authentication successful!\n")
     return creds
 
 
@@ -51,15 +49,20 @@ def get_user_data(creds):
         if response.status_code == 200:
             user_info = response.json()
             email = user_info.get('email')
-            print(f"User logged in: {email}")
-            print()
+            print(f"User logged in: {email}\n")
             return email
         else:
             print("Error retrieving user info. Status code:", response.status_code)
             exit()
     except Exception as e:
-        print("Failed to retrieve email")
-        print()
-        exit()
+        print("Failed to retrieve email\n")
+        exit("Exiting Application...")
         
 
+def print_file_not_found_error():
+    """
+    Prints an error message indicating that the file was not found.
+    """
+    sys.exit("""Could not find client_secret.json file. Please add it to the authentication folder.
+        See README.md for instructions
+                \n\nExiting Application...""")

@@ -88,7 +88,7 @@ def print_election_title(chosen_election):
     """
     print()
     title = chosen_election["title"]
-    print(f"The title of this election is: {title}")
+    print(f"The title of this election is: \n        {title}")
     print()
 
 
@@ -105,7 +105,7 @@ def print_votes(chosen_election):
         print(f"{votes} vote(s) for: {option.capitalize()}.")
         total_votes += votes
     print()
-    print(f"Total votes for this election: {total_votes}")
+    print(f"Total votes for this election: \n        {total_votes}")
     print()
 
 
@@ -117,7 +117,7 @@ def print_is_self_voting(chosen_election):
     chosen_election (dict): The metadata of the chosen election.
     """
     selfvoting = chosen_election["self_voting"]
-    print(f"Is the maker of the election allowed to vote?: {selfvoting}")
+    print(f"Is the maker of the election allowed to vote?: \n        {selfvoting}")
     print()
 
 
@@ -129,7 +129,7 @@ def print_is_public_election(chosen_election):
     chosen_election (dict): The metadata of the chosen election.
     """
     is_public = chosen_election["public_election"]
-    print(f"Is this a public election: {is_public}")
+    print(f"Is this a public election: \n        {is_public}")
     print()
 
 
@@ -141,7 +141,7 @@ def print_election_creator(chosen_election):
     chosen_election (dict): The metadata of the chosen election.
     """
     creator = chosen_election["creator"]
-    print(f"The creator of this election is: {creator}")
+    print(f"The creator of this election is: \n        {creator}")
     print()
 
 
@@ -153,6 +153,6 @@ def print_voters(chosen_election):
     chosen_election (dict): The metadata of the chosen election.
     """
     voters = chosen_election["voters"]
-    print(f"People allowed to vote in: {voters}")
+    print(f"People allowed to vote in: \n        {voters}")
     print()
     

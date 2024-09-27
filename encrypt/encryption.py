@@ -1,6 +1,8 @@
 import os
 import base64
 from cryptography.fernet import Fernet
+import sys
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,7 +19,9 @@ def read_key_from_env():
     """
     encoded_key = os.getenv("ENCRYPTION_KEY")
     if encoded_key is None:
-        raise ValueError("Encryption key not found in the environment variables.")
+        sys.exit("""ENCRYPTION_KEY not found in environment variables. \n        Please add it to your .env file.
+                 \n        Example: \n            ENCRYPTION_KEY=your_encryption_key (see README.md for instructions)
+                 \n\nExiting Application...""")
 
     key = base64.urlsafe_b64decode(encoded_key.encode())
     return key

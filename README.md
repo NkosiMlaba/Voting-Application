@@ -30,10 +30,13 @@ Additional requirements:
 
 
 ## Running instructions:
-- Open terminal in the application's directory
-- Run this command in terminal --> pip install -r dependencies/requirements.txt
-    (installs the dependencies)
-- Run this command in terminal --> 
+1. Open terminal in the application's directory
+
+2. Run this command in terminal to install dependencies
+    
+        pip install -r dependencies/requirements.txt
+
+3. Run this command in terminal --> 
     
         python3 project.py
 

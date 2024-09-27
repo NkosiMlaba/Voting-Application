@@ -20,8 +20,8 @@ def start_app():
     """
     global creds, user_email
     while True:
-        print("""Welcome to 
-        Select an option to continue
+        print("""Welcome to Voting Application!
+        Select an option to continue (e.g. 1)
         [1] Log in to Voting App
         [2] Exit""")
         userinput = input("Option: ")
