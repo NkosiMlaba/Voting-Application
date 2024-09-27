@@ -3,14 +3,16 @@
 ## Project Status ![Status](https://img.shields.io/badge/status-completed-brightgreen)
 
 1. The core functionality is completed and includes:
+    - User authentication with Google Oauth
     - Creating an election
     - Viewing elections, viewing election details
     - Participating in an election
-    - Email encryption
+    - User data encryption and decryption
+    - Saving election data (JSON for metadata)
 
 2. Additional features that I am looking to have implemented:
     - More robust user interface
-    - Using databases to store the election data
+    - Using database to store the election data
 
 
 ## Account Requirements:
@@ -30,7 +32,7 @@ Additional requirements:
 
 
 ## Running instructions:
-1. Open terminal in the application's directory
+1. Open a terminal in the application's directory
 
 2. Run this command in terminal to install dependencies
     

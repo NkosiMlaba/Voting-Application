@@ -78,20 +78,20 @@ def get_election_title():
     """
     
     while True:
-        title = input("Enter the name of your poll / election: ")
+        title = input("Enter the name of your election: \n        ")
         if title != "":
             return title
 
 
 def get_options_number():
-    """Prompts the user to enter the number of options/candidates.
+    """Prompts the user to enter the number of options.
 
     Returns:
-        int: The number of options/candidates.
+        int: The number of options.
     """
     
     while True:
-        number = input("Enter number of candidates /options: ")
+        number = input("Enter number of available options: \n        ")
         try:
             number = int(number)
             if number < 2:
@@ -111,7 +111,7 @@ def get_option(number):
         str: The name of the option.
     """
     while True:
-        option = input(f"Enter the name of the {number} option in the election: ")
+        option = input(f"Enter the name of the {number} option in the election: \n        ")
         if option != "":
             return option
 
@@ -126,7 +126,7 @@ def get_data(option):
         str: The details for the option.
     """
     while True:
-        data = input(f"Enter the enter all details corresponding to {option} option in the election: ")
+        data = input(f"Enter the enter all details corresponding to {option} option in the election: \n        ")
         if data != "":
             return data
 
@@ -158,7 +158,7 @@ def get_is_self_voting():
     """
     
     while True:
-        print("As the maker of this election, are you allowed to participate in it?")
+        print("As the maker of this election, are you allowed to participate in it?\n        ")
         is_owner_voting = input(f"Enter 'Yes' to allow self voting and 'No' to disallow it: ")
         if is_owner_voting.lower() == "yes":
             return True
@@ -208,7 +208,7 @@ def get_voter_email(number):
         str: The email address of the voter.
     """
     while True:
-        data = input(f"Enter the email corresponding to {number} voter in the election: ")
+        data = input(f"Enter the email corresponding to {number} voter in the election: \n        ")
         if data != "":
             return data
 
