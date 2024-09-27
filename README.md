@@ -2,7 +2,11 @@
 
 ## Project Status ![Status](https://img.shields.io/badge/status-completed-brightgreen)
 
-1. The core functionality is completed
+1. The core functionality is completed and includes:
+    - Creating an election
+    - Viewing elections, viewing election details
+    - Participating in an election
+    - Email encryption
 
 2. Additional features that I am looking to have implemented:
     - More robust user interface
@@ -17,9 +21,11 @@
 ## System Requirements:
 - An internet connection
 - A linux based machine
-- Bash terminal
+- Terminal
 - Python3
 - Pip
+
+Additional requirements:
 - .env file <a href="#encryption">(instructions)</a>
 
 
@@ -33,7 +39,7 @@
 
 
 ## Testing instructions:
-1. Command to run tests:
+1. Commands to run tests:
     
         python3 tests/test_project.py
         python3 tests/test_create.py
