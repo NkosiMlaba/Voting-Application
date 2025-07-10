@@ -1,0 +1,12 @@
+0.notes.py
+try.py
+__pycache__
+.vscode
+.venv
+test_base.py
+test_using_test_base.py
+token.json
+token.pickle
+client_secret.json
+.env
+database

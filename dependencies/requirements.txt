@@ -1,0 +1,6 @@
+prompt_toolkit
+google-auth-oauthlib
+google-auth
+google-api-python-client
+python-dotenv
+cryptography
